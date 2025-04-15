@@ -36,6 +36,10 @@ input {
   font-weight: bold;
 }
 
+#logo:hover {
+  cursor: pointer;
+}
+
 .buttons_header {
   display: flex;
   flex-direction: row;
@@ -77,7 +81,7 @@ input {
 }
 
 .search_container {
-  border-radius: 2px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   margin-right: 20px;
@@ -87,8 +91,9 @@ input {
   background-color: white;
 }
 
-.train_container {
-  border-radius: 2px;
+#train_container {
+  overflow-y: scroll;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -113,7 +118,8 @@ input {
   margin-top: auto;
   align-content: center;
   text-align: center;
-  background-color: #71bfa0;
+  background-color: #469e86;
+  color: white;
   height: 40px;
 }
 
@@ -159,4 +165,24 @@ input {
 
 .button_header_bookings {
   cursor: pointer;
+}
+
+.trim-data {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4eeee;
+  margin: 5px 0;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+button {
+  padding: 0 10px;
+  background-color: #469e86;
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
 }
