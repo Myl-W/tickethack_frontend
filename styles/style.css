@@ -28,6 +28,7 @@ input {
 }
 
 #logo {
+  margin-left: 30px;
   width: 80vw;
   color: #71bfa0;
   font-size: 20px;
@@ -140,4 +141,13 @@ input {
 
 #bookings {
   display: none;
+}
+
+.button_header_cart {
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.button_header_bookings {
+  cursor: pointer;
 }
