@@ -6,40 +6,47 @@
     <title>Ticket Hack</title>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
-  <body>
 
-<body>
+  <body>
     <header>
-        <p class="logo">TicketHack</p>
-        <div class="buttons_header">
-            <p class="button_Header_Cart">Cart</p>
-            <p class="button_Header_Cart">Bookings</p>
-        </div>
+      <p class="logo">TicketHack</p>
+      <div class="buttons_header">
+        <p class="button_Header_Cart">Cart</p>
+        <p class="button_Header_Cart">Bookings</p>
+      </div>
     </header>
 
     <div class="container">
-        <div class="center">
-            <h1>Explore the world effortlessly by train!</h1>
-            <h2>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack</h2>
-        </div>
-        <div class="search_and_train_container">
-
-            <div class="search_container">
-                <input type="text" placeholder="Departure">
-                <input type="text" placeholder="Arrival">
-                <input type="date" id="date_user">
-                <div class="search_button">Search</div>
-            </div>
-
-            <div class="train_container">
-                <img src="images/train.png" alt="">
-                <p>It's time to book your future trip</p>
-            </div>
+      <div class="center">
+        <h1>Explore the world effortlessly by train!</h1>
+        <h2>
+          Compare, book and enjoy cheap prices for train tickets: your journey
+          starts on Tickethack
+        </h2>
+      </div>
+      <div class="search_and_train_container">
+        <div class="search_container">
+          <input type="text" placeholder="Departure" />
+          <input type="text" placeholder="Arrival" />
+          <input type="date" id="date_user" />
+          <div class="search_button">Search</div>
         </div>
 
-
-
-
+        <div class="train_container">
+          <img src="images/train.png" alt="" />
+          <p>It's time to book your future trip</p>
+        </div>
+      </div>
+      <div id="reservation-bg">
+        <div id="cart" class="reservation-container">
+          <p>No tickets in your cart.</p>
+          <p>Why not plan a trip ?</p>
+        </div>
+        <div id="bookings" class="reservation-container">
+          <p>No booking yet.</p>
+          <p>Why not plan a trip ?</p>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

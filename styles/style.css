@@ -1,72 +1,122 @@
-header{
-    display: flex;
-    flex-direction: row;
+@font-face {
+  font-family: "Rustica";
+  src: url("../fonts/Fontspring-DEMO-4_rustica-semilight.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-.logo{
-    width: 80vw;
-    color: #71bfa0;
-    font-size: 20px;
-    font-weight: bold;
+body {
+  margin: 0;
+  font-family: "Rustica";
 }
 
-.buttons_header{
-    display: flex;
-    flex-direction: row;
-    font-size: 20px;
-    font-weight: bold;
+header {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: 100;
+  background-color: white;
 }
 
-.center{
-    width: 100vw;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    h1{
-        color: white
-    };
-    h2 {
-        color: white
-    };
+.logo {
+  width: 80vw;
+  color: #71bfa0;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.search_and_train_container{
-    flex-direction: row;
-    width: 40vw;
-    height: 20vh;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto; 
+.buttons_header {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.center {
+  width: 100vw;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  h1 {
+    color: white;
+  }
+  h2 {
+    color: white;
+  }
+}
+
+.search_and_train_container {
+  flex-direction: row;
+  width: 40vw;
+  height: 20vh;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
 .row {
-    
 }
 
-.container{
-    background-image: url('../images/background.jpg');
-    height: 90vh;
-    width: 100vw;
+.container {
+  background-image: url("../images/background.jpg");
+  height: 90vh;
+  width: 100vw;
 }
 
-.search_container{
-    margin-right: 20px;
-    padding: 20px 20px 0px 20px;
-    width: 20vw;
-    height: 45vh;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
+.search_container {
+  margin-right: 20px;
+  padding: 20px 20px 0px 20px;
+  width: 20vw;
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
 }
 
-.train_container{
-    padding: 20px 20px 0px 20px;
-    height: 45vh;
-    width: 20vw;
-    background-color: white;
+.train_container {
+  padding: 20px 20px 0px 20px;
+  height: 45vh;
+  width: 20vw;
+  background-color: white;
 }
 
-.search_button{
-    margin-top: 50px;
-    background-color: #71bfa0;
+.search_button {
+  margin-top: 50px;
+  background-color: #71bfa0;
+}
+
+#reservation-bg {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: #e4e4e4;
+  z-index: 1;
+}
+
+.reservation-container {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  font-weight: 600;
+}
+
+#cart {
+  display: none;
+}
+
+#bookings {
+  display: none;
 }
