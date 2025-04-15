@@ -92,7 +92,6 @@ input {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
   margin-left: 20px;
   padding: 20px;
   height: 320px;
@@ -100,7 +99,16 @@ input {
   background-color: white;
 }
 
-.search_button {
+#train_container::-webkit-scrollbar {
+  width: 5px;
+}
+
+#train_container::-webkit-scrollbar-thumb {
+  background: #717171;
+  border-radius: 15px;
+}
+
+#search_button {
   border-radius: 2px;
   margin-top: auto;
   align-content: center;
