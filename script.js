@@ -86,6 +86,8 @@ function updateCartPage() {
 
       cart.push(trip);
       renderCart();
+      document.querySelector("#reservation-bg").style.display = "block";
+      document.querySelector("#cart").style.display = "block";
     });
   });
 }
@@ -102,22 +104,42 @@ function renderCart() {
   } else {
     emptyCartText.style.display = "none";
     suggestionText.style.display = "none";
+    const total = cart.reduce((acc, trip) => acc + Number(trip.price), 0);
 
-    cartItemsContainer.innerHTML = cart
-      .map(
-        (trip) => `
-        <div class="cart-item">
-          <p><strong>${trip.departure}</strong> ➡ <strong>${
-          trip.arrival
-        }</strong></p>
+    cartItemsContainer.innerHTML =
+      `<p>My Cart</p>` +
+      cart
+        .map(
+          (trip, index) => `
+        <div class="trim-data">
+          <p><strong>${trip.departure}</strong> > <strong>${
+            trip.arrival
+          }</strong></p>
           <p>${new Date(trip.date).toLocaleTimeString([], {
             hour: "2-digit",
             minute: "2-digit",
           })}</p>
           <p>${trip.price}€</p>
+          <button class="button-delete" data-index="${index}">X</button>
         </div>
       `
-      )
-      .join("");
+        )
+        .join("") +
+      `
+      <div id="cart-total">
+        <p>Total : ${total}€<p>
+        <button>Purchase</button>
+      </div>`;
+    deleteTrip();
   }
+}
+
+function deleteTrip() {
+  const deleteButtons = document.querySelectorAll(".button-delete");
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      cart.splice(this.getAttribute("data-index"), 1);
+      renderCart();
+    });
+  });
 }
