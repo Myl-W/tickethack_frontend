@@ -149,6 +149,7 @@ function deleteTrip() {
 function updateBookingsPage() {
   document.querySelector("#button-purchase").addEventListener("click", () => {
     bookings.push(...cart);
+    bookings.sort((a, b) => new Date(a.date) - new Date(b.date));
     cart.length = 0;
     console.log(bookings);
     renderCart();
