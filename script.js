@@ -61,11 +61,11 @@ document.querySelector("#search_button").addEventListener("click", () => {
           `
           )
           .join("");
-          updateCartPage();
-          
+        updateCartPage();
       } else {
         document.querySelector("#train_container").innerHTML = `
           <img src="images/notfound.png" alt="" />
+          <div id="train-separator"></div>
           <p>no trip found.</p>
         `;
       }
@@ -73,43 +73,51 @@ document.querySelector("#search_button").addEventListener("click", () => {
 });
 
 function updateCartPage() {
-    const bookButtons = document.querySelectorAll('.button-book');
-  
-    bookButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const trip = {
-          departure: button.dataset.departure,
-          arrival: button.dataset.arrival,
-          date: button.dataset.date,
-          price: button.dataset.price,
-        };
-  
-        cart.push(trip);
-        renderCart();
-      });
+  const bookButtons = document.querySelectorAll(".button-book");
+
+  bookButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const trip = {
+        departure: button.dataset.departure,
+        arrival: button.dataset.arrival,
+        date: button.dataset.date,
+        price: button.dataset.price,
+      };
+
+      cart.push(trip);
+      renderCart();
     });
-  }
-  
-  function renderCart() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    const emptyCartText = document.querySelector('#cart > p:first-child');
-    const suggestionText = document.querySelector('#cart > p:nth-child(2)');
-  
-    if (cart.length === 0) {
-      emptyCartText.style.display = 'block';
-      suggestionText.style.display = 'block';
-      cartItemsContainer.innerHTML = '';
-    } else {
-      emptyCartText.style.display = 'none';
-      suggestionText.style.display = 'none';
-  
-      cartItemsContainer.innerHTML = cart.map(trip => `
+  });
+}
+
+function renderCart() {
+  const cartItemsContainer = document.getElementById("cart-items");
+  const emptyCartText = document.querySelector("#cart > p:first-child");
+  const suggestionText = document.querySelector("#cart > p:nth-child(2)");
+
+  if (cart.length === 0) {
+    emptyCartText.style.display = "block";
+    suggestionText.style.display = "block";
+    cartItemsContainer.innerHTML = "";
+  } else {
+    emptyCartText.style.display = "none";
+    suggestionText.style.display = "none";
+
+    cartItemsContainer.innerHTML = cart
+      .map(
+        (trip) => `
         <div class="cart-item">
-          <p><strong>${trip.departure}</strong> ➡ <strong>${trip.arrival}</strong></p>
-          <p>${new Date(trip.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+          <p><strong>${trip.departure}</strong> ➡ <strong>${
+          trip.arrival
+        }</strong></p>
+          <p>${new Date(trip.date).toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          })}</p>
           <p>${trip.price}€</p>
         </div>
-      `).join('');
-    }
+      `
+      )
+      .join("");
   }
-  
+}

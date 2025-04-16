@@ -14,40 +14,41 @@
         <p id="bookings-button" class="button_header_bookings">Bookings</p>
       </div>
     </header>
-    <div class="container">
-      <div class="center">
-        <h1>Explore the world effortlessly by train!</h1>
-        <h2>
-          Compare, book and enjoy cheap prices for train tickets: your journey
-          starts on Tickethack
-        </h2>
+
+    <div class="center">
+      <h1>Explore the world effortlessly by train!</h1>
+      <h2>
+        Compare, book and enjoy cheap prices for train tickets: your journey
+        starts on Tickethack
+      </h2>
+    </div>
+
+    <div id="search_and_train_container">
+      <div id="search_container">
+        <input type="text" id="departure_user" placeholder="Departure" />
+        <div id="search-separator"></div>
+        <input type="text" id="arrival_user" placeholder="Arrival" />
+        <input type="date" id="date_user" />
+        <div id="search_button">Search</div>
       </div>
 
-      <div id="search_and_train_container">
-        <div id="search_container">
-          <input type="text" id="departure_user" placeholder="Departure" />
-          <div class="separator"></div>
-          <input type="text" id="arrival_user" placeholder="Arrival" />
-          <input type="date" id="date_user" />
-          <div id="search_button">Search</div>
-        </div>
-
-        <div id="train_container">
-          <img src="images/train.png" alt="" />
-          <p>It's time to book your future trip</p>
-        </div>
+      <div id="train_container">
+        <img src="images/train.png" alt="" />
+        <div id="train-separator"></div>
+        <p>It's time to book your future trip</p>
       </div>
-      <div id="reservation-bg">
-        <div id="cart" class="reservation-container">
-          <p>No tickets in your cart.</p>
-          <p>Why not plan a trip ?</p>
-          <div id="cart-items"></div>
-        </div>
-        <div id="bookings" class="reservation-container">
-          <p>No booking yet.</p>
-          <p>Why not plan a trip ?</p>
-          <div id="bookings-items"></div>
-        </div>
+    </div>
+
+    <div id="reservation-bg">
+      <div id="cart" class="reservation-container">
+        <p>No tickets in your cart.</p>
+        <p>Why not plan a trip ?</p>
+        <div id="cart-items"></div>
+      </div>
+      <div id="bookings" class="reservation-container">
+        <p>No booking yet.</p>
+        <p>Why not plan a trip ?</p>
+        <div id="bookings-items"></div>
       </div>
     </div>
     <script src="script.js"></script>
