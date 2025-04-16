@@ -1,14 +1,6 @@
-@font-face {
-  font-family: "Rustica";
-  src: url("../fonts/Fontspring-DEMO-4_rustica-semilight.otf")
-    format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
   margin: 0;
-  font-family: "Rustica", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+  font-family: "Raleway", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;
   background-image: url("../images/background.jpg");
   background-size: cover;
