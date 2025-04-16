@@ -1,6 +1,7 @@
 // ┬─┬ノ( º _ ºノ)
 // (╯°□°)╯︵ ┻━┻
 const cart = [];
+const bookings = [];
 
 document.querySelector("#logo").addEventListener("click", () => {
   document.querySelector("#reservation-bg").style.display = "none";
@@ -128,9 +129,10 @@ function renderCart() {
       `
       <div id="cart-total">
         <p>Total : ${total}€<p>
-        <button>Purchase</button>
+        <button id="button-purchase">Purchase</button>
       </div>`;
     deleteTrip();
+    updateBookingsPage();
   }
 }
 
@@ -141,5 +143,50 @@ function deleteTrip() {
       cart.splice(this.getAttribute("data-index"), 1);
       renderCart();
     });
+  });
+}
+
+function updateBookingsPage() {
+  document.querySelector("#button-purchase").addEventListener("click", () => {
+    bookings.push(...cart);
+    cart.length = 0;
+    console.log(bookings);
+    renderCart();
+
+    document.querySelector("#bookings > p:first-child").style.display = "none";
+    document.querySelector("#bookings > p:nth-child(2)").style.display = "none";
+    document.querySelector("#cart").style.display = "none";
+    document.querySelector("#bookings").style.display = "block";
+
+    document.getElementById("bookings-items").innerHTML =
+      `<p>My bookings</p>` +
+      bookings
+        .map((trip) => {
+          const formatDate = new Date(trip.date).toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+          const diffHours = Math.floor(
+            (new Date(trip.date).getTime() - Date.now()) / (1000 * 60 * 60)
+          );
+          return `
+        <div class="trim-data">
+          <p>${trip.departure} > ${trip.arrival}</p>
+          <p>${formatDate}</p>
+          <p>${trip.price}€</p>
+          <p>${
+            Number(diffHours) < 0
+              ? `Departure in ${diffHours} hours`
+              : `Already left the station`
+          }</p>
+          
+        </div>
+      `;
+        })
+        .join("") +
+      `
+      <div id="bookings-separator"></div>
+      <p class='green'>Enjoy your travels with Tickethack!</p>
+      `;
   });
 }
