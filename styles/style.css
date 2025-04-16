@@ -12,20 +12,24 @@ body {
     sans-serif;
 }
 
+.container {
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+  width: 100vw;
+}
+
+/* #----------------------------------------------------------
+   # Navbar 
+   #----------------------------------------------------------*/
 header {
   display: flex;
   flex-direction: row;
   position: relative;
   z-index: 100;
   background-color: white;
-}
-
-input {
-  border-radius: 4px;
-  width: auto;
-  height: 40px;
-  background-color: #e4e4e4;
-  border-color: unset;
 }
 
 #logo {
@@ -47,6 +51,17 @@ input {
   font-weight: bold;
 }
 
+.button_header_cart {
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.button_header_bookings {
+  cursor: pointer;
+}
+/* #----------------------------------------------------------
+   # Title h1 & h2
+   #----------------------------------------------------------*/
 .center {
   width: 100vw;
   display: flex;
@@ -62,25 +77,19 @@ input {
   }
 }
 
-.search_and_train_container {
-  flex-direction: row;
-  width: 40vw;
-  height: 20vh;
+/* #----------------------------------------------------------
+   # Search and Train
+   #----------------------------------------------------------*/
+#search_and_train_container {
   display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
+  justify-content: center;
+  gap: 100px;
 }
 
-.container {
-  background-image: url("../images/background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 90vh;
-  width: 100vw;
-}
-
-.search_container {
+/* #----------------------------------------------------------
+   # Search
+   #----------------------------------------------------------*/
+#search_container {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -91,6 +100,43 @@ input {
   background-color: white;
 }
 
+input {
+  padding: 0 10px;
+  border-radius: 5px;
+  width: auto;
+  height: 40px;
+  background-color: #f0f2f1;
+  border: none;
+}
+
+input:focus {
+  outline-color: #315072;
+}
+
+.separator {
+  width: auto;
+  height: 1px;
+  background-color: #b4b4b4;
+  margin: 0 3px;
+}
+
+#date_user {
+  margin-top: 50px;
+}
+
+#search_button {
+  border-radius: 5px;
+  margin-top: auto;
+  align-content: center;
+  text-align: center;
+  background-color: #469e86;
+  color: white;
+  height: 40px;
+}
+
+/* #----------------------------------------------------------
+   # Train
+   #----------------------------------------------------------*/
 #train_container {
   overflow-y: scroll;
   border-radius: 10px;
@@ -113,16 +159,29 @@ input {
   border-radius: 15px;
 }
 
-#search_button {
-  border-radius: 2px;
-  margin-top: auto;
-  align-content: center;
-  text-align: center;
-  background-color: #469e86;
-  color: white;
-  height: 40px;
+.trim-data {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4eeee;
+  margin: 5px 0;
+  padding: 0 10px;
+  border-radius: 5px;
 }
 
+button {
+  padding: 0 10px;
+  background-color: #469e86;
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
+}
+
+/* #----------------------------------------------------------
+   # Cart and Bookings
+   #----------------------------------------------------------*/
 #reservation-bg {
   display: none;
   position: fixed;
@@ -150,39 +209,16 @@ input {
   font-weight: 600;
 }
 
+/* #----------------------------------------------------------
+   # Cart
+   #----------------------------------------------------------*/
 #cart {
   display: none;
 }
 
+/* #----------------------------------------------------------
+   # Bookings
+   #----------------------------------------------------------*/
 #bookings {
   display: none;
-}
-
-.button_header_cart {
-  cursor: pointer;
-  margin-right: 20px;
-}
-
-.button_header_bookings {
-  cursor: pointer;
-}
-
-.trim-data {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f4eeee;
-  margin: 5px 0;
-  padding: 0 10px;
-  border-radius: 5px;
-}
-
-button {
-  padding: 0 10px;
-  background-color: #469e86;
-  border: none;
-  height: 30px;
-  border-radius: 5px;
-  color: white;
 }
