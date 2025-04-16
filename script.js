@@ -28,7 +28,7 @@ document.querySelector("#search_button").addEventListener("click", () => {
     date: document.querySelector("#date_user").value,
   };
 
-  fetch("http://localhost:3000/trips", {
+  fetch("https://tickethack-backend-lyart.vercel.app/trips", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(dataInput),
