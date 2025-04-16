@@ -166,16 +166,15 @@ function updateBookingsPage() {
             hour: "2-digit",
             minute: "2-digit",
           });
-          const diffHours = Math.floor(
-            (new Date(trip.date).getTime() - Date.now()) / (1000 * 60 * 60)
-          );
+          const diffMs = new Date(trip.date).getTime() - Date.now();
+          const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
           return `
         <div class="trim-data">
           <p>${trip.departure} > ${trip.arrival}</p>
           <p>${formatDate}</p>
           <p>${trip.price}€</p>
           <p>${
-            Number(diffHours) < 0
+            diffHours > 0
               ? `Departure in ${diffHours} hours`
               : `Already left the station`
           }</p>
